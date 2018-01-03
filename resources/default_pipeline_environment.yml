@@ -6,3 +6,6 @@ general:
 steps:
   mavenExecute:
     dockerImage: 'maven:3.5-jdk-7'
+
+  npmExecute:
+    dockerImage: 's4sdk/docker-node-browsers'
