@@ -124,7 +124,7 @@ void call(Map parameters = [:]) {
             if (configuration.extension) mtaCall += " --extension=$configuration.extension"
             mtaCall += ' build'
 
-            echo "[INFO] Executing mta build call: '${mtaCall}'."
+            echo "[INFO] Executing mta build calling Hugo: '${mtaCall}'."
 
             sh """#!/bin/bash
             export PATH=./node_modules/.bin:${PATH}
