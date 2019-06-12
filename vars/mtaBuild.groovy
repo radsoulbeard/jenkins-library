@@ -115,8 +115,8 @@ void call(Map parameters = [:]) {
 
             def mtarFileName = "${id}.mtar"
             // If it is not configured, it is expected on the PATH
-            def mtaJar = 'java -jar '
-            mtaJar += configuration.mtaJarLocation ?: 'mta.jar'
+            def mtaJar = '/opt/sap/mta/bin/mtaBuild.sh'
+            //mtaJar += configuration.mtaJarLocation ?: 'mta.jar'
             def buildTarget = configuration.buildTarget
 
             def mtaCall = "${mtaJar} --mtar ${mtarFileName} --build-target=${buildTarget}"
