@@ -126,10 +126,11 @@ void call(Map parameters = [:]) {
 
             echo "[INFO] Executing mta build calling Hugo: '${mtaCall}'."
 
-            def whichJava = 'which java'
+            def echoPath = 'echo $PATH'
+            echo "Ich bin der andere '${PATH}'"
             sh """#!/bin/bash
             export PATH=./node_modules/.bin:${PATH}
-            $whichJava
+            $echoPath
             $mtaCall
             """
 
