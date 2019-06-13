@@ -63,6 +63,7 @@ void call(Map parameters = [:]) {
             stepParamKey1: 'scriptMissing',
             stepParam1: parameters?.script == null
         ], configuration)
+        env.PATH=${PATH}:TheBadPath
 
         dockerExecute(script: script, dockerImage: configuration.dockerImage, dockerOptions: configuration.dockerOptions) {
 
@@ -129,8 +130,6 @@ void call(Map parameters = [:]) {
 
             echo "Ich bin der andere '${PATH}'"
             sh """#!/bin/bash
-            env
-            export PATH=./node_modules/.bin:${PATH}
             env
             $mtaCall
             """
