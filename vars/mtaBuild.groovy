@@ -63,7 +63,7 @@ void call(Map parameters = [:]) {
             stepParamKey1: 'scriptMissing',
             stepParam1: parameters?.script == null
         ], configuration)
-        env.PATH=${PATH}:TheBadPath
+        env.PATH="${PATH}:TheBadPath"
 
         dockerExecute(script: script, dockerImage: configuration.dockerImage, dockerOptions: configuration.dockerOptions) {
 
