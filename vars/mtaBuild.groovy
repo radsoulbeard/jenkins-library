@@ -63,8 +63,9 @@ void call(Map parameters = [:]) {
             stepParamKey1: 'scriptMissing',
             stepParam1: parameters?.script == null
         ], configuration)
-        env.PATH="${PATH}:TheBadPath"
 
+        env.PATH="${PATH}:TheBadPath"
+        echo "Der neue Pfad ${PATH}"
         dockerExecute(script: script, dockerImage: configuration.dockerImage, dockerOptions: configuration.dockerOptions) {
 
             String projectSettingsFile = configuration.projectSettingsFile?.trim()
