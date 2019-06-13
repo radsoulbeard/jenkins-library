@@ -131,6 +131,7 @@ void call(Map parameters = [:]) {
 
             echo "Ich bin der andere '${PATH}'"
             sh """#!/bin/bash
+            export PATH=./node_modules/.bin:\$PATH
             env
             $mtaCall
             """
